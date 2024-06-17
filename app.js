@@ -11,14 +11,6 @@ app.use(express.json());
 
 const PORT = process.env.PORT || 3000;
 
-
-
-const fetchAPI = async ()=>{
-    
-}
-
-// fetchAPI()
-
 app.get("/", (req, res) =>{
   res.render("index.ejs");
 });
@@ -37,7 +29,7 @@ const options = {
 try {
   const response = await fetch(apiRes, options);
   const result = await response.json();
-  res.render("success.ejs", { videoLink: result.dlink });
+  res.render("index.ejs", { videoLink: result.dlink });
 } catch (error) {
   console.error(error);
 }
